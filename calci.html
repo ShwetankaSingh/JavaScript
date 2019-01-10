@@ -1,0 +1,48 @@
+<html>
+<head>
+<script>
+function Sum()
+{
+var a=parseInt(document.getElementById("fno").value);
+var b=parseInt(document.getElementById("sno").value);
+var c=a+b;
+document.getElementById("result").innerHTML=c;
+}
+function Sub()
+{
+var a=parseInt(document.getElementById("fno").value);
+var b=parseInt(document.getElementById("sno").value);
+var c=a-b;
+document.getElementById("result").innerHTML=c;
+}
+function Mul()
+{
+var a=parseInt(document.getElementById("fno").value);
+var b=parseInt(document.getElementById("sno").value);
+var c=a*b;
+document.getElementById("result").innerHTML=c;
+}
+function Divi()
+{
+var a=parseInt(document.getElementById("fno").value);
+var b=parseInt(document.getElementById("sno").value);
+var c=a/b;
+document.getElementById("result").innerHTML=c;
+}
+</script>
+</head>
+<body>
+<feildset>
+<legend>Calculator</legend>
+<table>
+<tr><th>First No.</th><td><input type="text" id="fno"></td></tr>
+<tr><th>Second No.</th><td><input type="text" id="sno"></td></tr>
+<tr><th>Result:</th><td><div id="result"></div></td></tr>
+<tr><td><button type="button" onclick="Sum()">ADDITION</button></td>
+<td><button type="button" onclick="Sub()">SUBTRACTION</button></td>
+<td><button type="button" onclick="Mul()">MULTIPLICATION</button></td>
+<td><button type="button" onclick="Divi()">DIVISION</button></td></tr>
+</table>
+</feildset>
+</body>
+</html>

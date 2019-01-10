@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calad</title>
+	<style>
+.bb{
+    background-color: #330033; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.sa
+{
+	 padding-left:400px;
+	 padding-bottom: 10px;
+}
+</style>
+	<script type="text/javascript">
+		var l=0;
+    var c="";
+    var s="";
+    var d="";
+    var m;
+    var n;
+		function fun(a)
+    {
+    if (l==0) 
+    {
+      if(a=='1'||a=='2'||a=='3'||a=='4'||a=='5'||a=='6'||a=='7'||a=='8'||a=='9'||a=='0')
+      {
+        c=c+String(a);
+        document.getElementById("result").innerHTML=c;
+      }
+      else if((c!='')&&(a=='+'||a=='-'||a=='*'||a=='/'))
+      {
+        s=a;
+        l++;
+        document.getElementById("result").innerHTML=c+s;
+      }
+      else if(a=='Q')
+      {
+        l=0;
+      c="";
+      d="";
+      s="";
+      m=0;n=0;
+        document.getElementById("result").innerHTML="";
+      }
+      else
+      {
+        document.getElementById("result").innerHTML="";
+      }
+    }
+    else if(l==1)
+    {
+      if(a=='1'||a=='2'||a=='3'||a=='4'||a=='5'||a=='6'||a=='7'||a=='8'||a=='9'||a=='0')
+      {
+        d=d+String(a);
+        document.getElementById("result").innerHTML=c+s+d;
+      }
+      else if(a=='+'||a=='-'||a=='*'||a=='/')
+      {
+        document.getElementById("result").innerHTML="Invalid";
+        }
+        else if ((a=='=')&&d!=='')
+          {
+            m=Number(c);
+            n=Number(d);
+            if(s=='+')
+              document.getElementById("result").innerHTML=m+n;
+            if(s=='-')
+              document.getElementById("result").innerHTML=m-n;
+            if(s=='*')
+              document.getElementById("result").innerHTML=m*n;
+            if(s=='/')
+              document.getElementById("result").innerHTML=m/n;
+
+          }
+    else if(a=='Q')
+          {
+      l=0;
+      c="";
+      d="";
+      s="";
+      m=0;n=0;
+      document.getElementById("result").innerHTML="";
+      }
+    }
+    }
+  </script>
+</head>
+<body bgcolor="000000" class="sa">
+	<div  id="result" style="font-size: 80px;color: white;font-style:bold italic;float:left;"></div>
+	<br>
+	<br>
+	<br>
+	<br><br><br><br><br>
+	<br><br>
+<button type="button" class="bb"  onclick="fun(1)">1</button> &nbsp;<button type="button" class="bb"  onclick="fun(2)">2</button>&nbsp;<button type="button" class="bb"   onclick="fun(3)">3</button>&nbsp;<button type="button" class="bb"  onclick="fun(4)">4</button>&nbsp;<button type="button" class="bb"  onclick="fun(5)">5</button>
+<br><br>
+<button type="button" class="bb"  onclick="fun(6)">6</button>&nbsp;<button type="button" class="bb"  onclick="fun(7)">7</button>&nbsp;<button type="button" class="bb"  onclick="fun(8)">8</button>&nbsp;<button type="button" class="bb"  onclick="fun(9)">9</button>&nbsp;<button type="button" class="bb"  onclick="fun(0)">0</button>
+<br>
+<br>
+<button type="button" class="bb"  onclick="fun('+')">+</button>&nbsp; <button type="button" class="bb"  onclick="fun('-')">-</button>&nbsp;<button type="button" class="bb"  onclick="fun('*')">*</button>&nbsp;<button type="button" class="bb"  onclick="fun('/')">/</button>
+&nbsp;<button type="button" class="bb"  onclick="fun('=')">=</button>
+<br>
+<br>
+<button type="button" class="bb"  onclick="fun('Q')">C</button>
+</body>
+</html>
